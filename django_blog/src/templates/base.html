@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    {% block title%}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-9I5NfC6lgHT6JX54+8FQ0AdmANVojjnc3jimW2odxyEsYkJrVl6bi7hpU9RfX2x4U3f0PTT8D7fruc2RQbgGQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'posts:home' %}">Home</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'posts:create' %}">Create Article</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <section id="blog">
+        {% block content%}
+        {%endblock%}
+    </section>
+</body>
+
+</html>

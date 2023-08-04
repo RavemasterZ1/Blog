@@ -1,0 +1,370 @@
+/* Reset Styles - Include your reset.css here */
+
+/* Base Page*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  line-height: 1.6;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+section#blog {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styles */
+header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+}
+
+/* Article Styles */
+article {
+  margin-bottom: 30px;
+}
+
+article h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+article p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Create Article Form Styles */
+form#create-article-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form#create-article-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+form#create-article-form input[type="text"],
+form#create-article-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+form#create-article-form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  section#blog {
+    padding: 20px;
+  }
+}
+
+/* Animation Styles */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+/* Reset Styles - Include your reset.css here */
+
+/* blogpost_list page*/
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #555;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+article {
+  margin-bottom: 40px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+article h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.post-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author {
+  color: #666;
+}
+
+.date {
+  color: #999;
+}
+
+article p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  article h2 {
+    font-size: 28px;
+  }
+}
+
+/* Upadte Page */ 
+/* Delete Page */
+
+/* Reset Styles - Include your reset.css here */
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  form input[type="submit"] {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+

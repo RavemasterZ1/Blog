@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome Page</title>
+</head>
+
+<body>
+    <header>
+        {% block title %}
+        <h1>My Blog</h1>
+        {% endblock %}
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    <main>
+        {% for post in posts %}
+        <article>
+            <div class="post-title">
+                <h2>{{ post.title }}</h2>
+                {% if request.user.is_authenticated %}
+                <div>
+                    {% if post.slug %}
+                    <a href="{% url 'posts:update' slug=post.slug %}" style="text-decoration: none; color: #007bff; display: flex; align-items: center;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit" style="width: 18px; height: 18px; margin-right: 10px;">
+                            <path d="M10.94 2.63L2 11.58V16h4.42l8.95-8.96L19.37 3.7 10.94 2.63z"></path>
+                            <line x1="23" y1="1" x2="1" y2="23"></line>
+                        </svg>
+                        Update Post
+                    </a>
+                    {% else %}
+                    <p>Empty slug for post: {{ post.title }}</p>
+                    {% endif %}
+                    {% if post.slug %}
+                    <a href="{% url 'posts:delete' slug=post.slug %}" style="text-decoration: none; color: #007bff; display: flex; align-items: center;">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash" style="width: 18px; height: 18px; margin-right: 10px;">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M5.921 6l-.92-4.545A1.99 1.99 0 0 1 7 0h10c1.053 0 1.938.636 2.321 1.545L18.08 6M6 6v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6"></path>
+                        </svg>
+                        Delete Post
+                    </a>
+                    {% else %}
+                    <p>Empty slug for post: {{ post.title }}</p>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            <p>Posted on <span class="date">{{ post.created_on|date:'j F y' }}</span> by <span
+                    class="author">{{post.author_default }}</span></p>
+            <p>{{ post.content|safe|truncatewords:50 }}.</p>
+
+            <form action="{% url 'posts:post' slug=post.slug %}">
+                <button> Read article</button>
+            </form>
+        </article>
+        {% endfor %}
+    </main>
+    {% endblock %}
+
+    <footer>
+        <p>&copy; 2023 My Blog. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
